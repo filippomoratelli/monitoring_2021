@@ -64,4 +64,7 @@ ggplot(d, aes(x = biofuels, y = oxydative)) + geom_polygon()
 
 # it should be something like setwd("/Desktop/UniBo/Monitoring/lab/")
 # instead do command + D and choose folder
+# import spreadsheet
 covid <- read.table("covid_agg.csv", header=TRUE)
+# to see data
+covid
