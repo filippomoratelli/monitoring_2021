@@ -68,3 +68,5 @@ ggplot(d, aes(x = biofuels, y = oxydative)) + geom_polygon()
 covid <- read.table("covid_agg.csv", header=TRUE)
 # to see data
 covid
+
+
