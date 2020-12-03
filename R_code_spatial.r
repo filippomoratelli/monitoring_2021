@@ -68,5 +68,14 @@ ggplot(d, aes(x = biofuels, y = oxydative)) + geom_polygon()
 covid <- read.table("covid_agg.csv", header=TRUE)
 # to see data
 covid
+head(covid)
+summary(covid)
+
+# ggplot2
+library(ggplot2)
+ggplot(covid, aes(x = lon, y = lat)) + geom_point()
+
+# changing the size of the data...
+ggplot(covid, aes(x = lon, y = lat, size = cases)) + geom_point()
 
 
