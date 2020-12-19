@@ -32,7 +32,7 @@ points(covid_planar)
 
 # putting countries on top of the map using another package from OSGeo
 install.packages("rgdal")
-library(rgadl)
+library(rgdal)
 
 # download coastlines
 # download the files (three types) and put them in the work directory
@@ -49,3 +49,17 @@ cl <- colorRampPalette(c('pink','green','orange','red','magenta'))(100)
 plot(density_map, col = cl)
 points(covid_planar, pch = 19, cex = 0.5)
 plot(coastlines, add = TRUE)
+dev.off()
+
+# interpolate cases data
+marks(covid_planar) <- cases
+cases_map <- Smooth(covid_planar)
+
+plot(cases_map, col = cl)
+points(covid_planar)
+plot(coastlines, add = T)
+
+###
+# install sf package by:
+install.packages("sf")
+library(sf)
